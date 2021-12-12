@@ -73,7 +73,7 @@ def caluas():
             tt=(b1*10+b2)*10**b3
             dd=errors(b4)
             tkinter.messagebox.showinfo('提示','电阻值为%s,误差为%s' % (tt, dd))
-
+#这个语句用for循环报错
 a1=tk.IntVar()
 a2=tk.IntVar()
 a3=tk.IntVar()
