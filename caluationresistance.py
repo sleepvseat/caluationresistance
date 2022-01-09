@@ -5,11 +5,12 @@ import tkinter.messagebox
 win=tk.Tk()
 win.geometry('570x500')
 win.title('caluationresistance')
-win.resizable(0,0)
+win.resizable(height=False,width=False)
+win.configure(bg='DeepSkyBlue')
 d=3
 b=0
 
-cl=(('0','whitesmoke'),('黑色','black'),('棕色','brown'),('红色','red'),('橙色','orange'),('黄色','yellow'),('绿色','green'),('蓝色','blue'),('紫色','purple'),('灰色','gray'),('白色','white'),('金色','gold'),('银色','silver'),('无色','ghostwhite'))
+cl=(('','DeepSkyBlue'),('黑色','black'),('棕色','brown'),('红色','red'),('橙色','orange'),('黄色','yellow'),('绿色','green'),('蓝色','blue'),('紫色','purple'),('灰色','gray'),('白色','white'),('金色','gold'),('银色','silver'),('无色','ghostwhite'))
 for a in cl:
     tk.Label(win,text=a[0],bg=a[1],justify='left',padx=6).place(x=b,y=10,anchor='nw')
     b+=40
@@ -73,7 +74,7 @@ def caluas():
             tt=(b1*10+b2)*10**b3
             dd=errors(b4)
             tkinter.messagebox.showinfo('提示','电阻值为%s,误差为%s' % (tt, dd))
-#这个语句用for循环报错
+
 a1=tk.IntVar()
 a2=tk.IntVar()
 a3=tk.IntVar()
@@ -84,8 +85,8 @@ a6=tk.IntVar()
 sc_list=(('第一段颜色',a1),('第二段颜色',a2),('第三段颜色',a3),('第四段颜色',a4),('第五段颜色',a5),('第六段颜色',a6))
 for c in sc_list:
     d+=60
-    tk.Scale(win,label=c[0],from_=0,to=13,variable=c[1],length=550,orient='horizontal',showvalue=0,tickinterval=1,resolution=1,).place(y=d,x=0)
+    tk.Scale(win,label=c[0],from_=0,bg='DeepSkyBlue',to=13,variable=c[1],length=550,orient='horizontal',showvalue=0,tickinterval=1,resolution=1,).place(y=d,x=0)
 
-tk.Button(win,text='计算色环电阻阻值',width=30,height=3,font=('times',10,'bold',),command=caluas).place(x=170,y=430)
+tk.Button(win,text='计算色环电阻阻值',width=30,height=3,font=('times',10,'bold',),bg='SpringGreen',command=caluas).place(x=170,y=430)
 
 win.mainloop()
